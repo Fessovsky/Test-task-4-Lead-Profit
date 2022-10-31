@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll numbers on click</title>
+    <script src="https://www.tutorialspoint.com/jquery/jquery-3.6.0.js"></script>
+    <style>
+      .container {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        max-width: 250px;
+        margin: 1rem;
+      }
+      .btn {
+        font-size: 1.2rem;
+        color: hsla(230, 100%, 35%, 1);
+        width: 80px;
+        height: 60px;
+        background-color: hsla(224, 100%, 70%, 0.8);
+        border: 1px solid hsl(224, 100%, 55%);
+        border-radius: 8px;
+      }
+      .btn:hover {
+        cursor: pointer;
+        background-color: hsla(224, 100%, 50%, 0.8);
+      }
+      .container::before {
+        content: "LOOP the nums";
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: hsl(224, 100%, 45%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+    </div>
+  </body>
+  <script>
+    $(".btn").on("click", function () {
+      $(this).parent().append($(".btn").first());
+    });
+  </script>
+</html>
