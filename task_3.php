@@ -6,11 +6,10 @@
      * @param  string $regExpPattern (optional) by default regex searching for .ixt files with Latin letters and numbers in the name.
      * @return void
      */
-    function getNames($folder, $regExpPattern = '~^[a-zA-Z0-9]+\.ixt$~'){
+    function getNames($folder='', $regExpPattern = '~^[a-zA-Z0-9]+\.ixt$~'){
         if(!$folder){
             $folder = 'datafiles';
         }
-        echo $folder . PHP_EOL;
         $counter=1;
         $namesArray = array();
         foreach(new DirectoryIterator($folder) as $file) {
@@ -26,5 +25,7 @@
         }
         return $namesArray;
     }
-    getNames("", '~.~');
+    getNames();
+    // getNames("", '~.~');
+    
     

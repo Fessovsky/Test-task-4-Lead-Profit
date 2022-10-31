@@ -103,7 +103,7 @@ final class Init {
                 }
                 </style>
             <div>
-            <h1>Fetched data</h1>
+            <h3>Fetched data</h3>
             <table>
                 <tr>
                     <th>Id</th>
